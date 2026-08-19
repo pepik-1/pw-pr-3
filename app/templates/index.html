@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="
+        https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/index.min.js
+        "></script>
+</head>
+<body class="h-[100dvh] bg-[#f5f5f5] py-20">
+
+    <main class="max-w-lg mx-auto">
+
+        <div class="border rounded-lg w-full h-80 bg-white p-5 mb-3 min-h-40">
+            <div class="flex items-center gap-2">
+                <i class="ph ph-upload-simple"></i>
+                <p class="text-sm text-base font-semibold border-[#e5e5e5]">Upload file</p>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <button id="upload" class="text-xs border border-[#a3a3a3] bg-[#fafafa] px-3 py-2 rounded-lg">upload</button>
+                
+                <span class="text-xs text-[#737373]">MP3,WAW,M4A,OGG</span>
+            </div>
+
+            <div id="uploadMusic" hidden class="mt-4 py-2.5 px-3 bg-[#fafafa] border border-[#e5e5e5] rounded-lg">
+                <div hidden class="flex items-center justify-center size-8 rounded-sm bg-white border border-[#e5e5e5] rounded-lg flex items-center gap-2.5">
+                    <i class="ph ph-music-notes-simple text-[#737373]"></i>
+                </div>
+                
+                <div>
+                    <div id="fileName" class="text-xs font-medium"></div>
+                    <div id="fileSize" class="text-xs text-[#737373]"></div>
+                </div>
+            </div>
+            
+            <div id="upActions" class="flex items-center gap-2.5 mt-4">
+                <button id="upSend" class="text-xs w-full border-transparent text-white bg-black border border-[#a3a3a3] bg-[#fafafa] px-3 py-2 rounded-lg">recognize</button>
+                
+                <button id="upDelete" class="text-xs  border border-[#a3a3a3] bg-[#fafafa] px-3 py-2 rounded-lg">delete</button>
+                
+            </div>
+
+            <input type="file"  name="" id="fileInput" style="display:none">
+        </div>
+
+        <div class="border bg-white shadow-sm rounded-lg border-[#e5e5e5]">
+            <div>
+                <i class="ph ph-list"></i>
+
+                <p class="text-sm text-base font-semibold border-[#e5e5e5]">Transcryption</p>
+            </div>
+            <div id="TranscryptionBody" class="border bg-[#fafafa] min-h-[88px] rounded-lg">
+
+            </div>
+        </div>
+
+        <button id="send">send</button>
+
+    </main>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
